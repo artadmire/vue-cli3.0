@@ -1,0 +1,144 @@
+@base-color: #FF3C3A;
+@desc-color: #D8D8D8;
+@font-default-color:#333234;
+//页面背景颜色
+.bg-color{
+    background: #F7F8FA;
+}
+//基本字体大小
+.base-fontsize{
+    font-size: 12px;
+}
+//基本按钮样式
+.base-button {
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: @base-color;
+    color: white;
+    border-radius: 5px;
+    .base-fontsize();
+}
+.base-cancel-button(@width,@height) {
+    width: @width;
+    margin: 0 auto;
+    display: block;
+    padding: 0 15px;
+    height: @height;
+    line-height: @height;
+    text-align: center;
+    background: white;
+    color: #FFADAD;
+    border: 1px solid #FFADAD;
+    border-radius: 5px;
+    .base-fontsize();
+}
+//基本藐视框样式
+.base-desc {
+    display: block;
+    width: 300px;
+    height: 30px;
+    margin: 10px auto;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    background: @desc-color;
+    .base-fontsize();
+}
+//flex布局 水平垂直方向居中布局样式 方向 column;
+.flex-justify-center-alignitems-center-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+//flex布局 水平方向居中,垂直方向space-between布局样式 方向 column;
+.flex-justify-space-between-alignitems-start-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start ;
+}
+//flex布局 水平左对齐方向居中布局样式 方向 column;
+.flex-justify-center-alignitems-start-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+//flex布局 水平垂直方向居中布局样式 方向 row;
+.flex-justify-center-alignitems-center-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+//flex布局 水平-start 垂直方向居中布局样式 方向 row;
+.flex-justify-start-alignitems-center-row {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+//flex布局 水平-end 垂直方向居中布局样式 方向 row;
+.flex-justify-end-alignitems-center-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+//flex布局 水平两端对齐 垂直方向 center row
+.flex-justify-space-between-alignitems-center-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+//flex布局  水平两端对齐 垂直方向 start row
+.flex-justify-space-between-alignitems-start-row {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+}
+//flex布局  水平两端对齐 垂直方向 start row
+.flex-justify-end-alignitems-start-row {
+    display: flex;
+    justify-content:flex-end;
+    align-items: flex-start;
+}
+// 单行省略号样式
+.text-overflow-single-line{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+// 多行省略号样式
+.text-overflow-multi-line(@counter){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @counter;
+    -webkit-box-orient: vertical;
+}
+//我的页面 基本框的样式
+.mine-page-basebox{
+    margin: 0 auto 10px;
+    padding: 0 10px;
+    width: 335px;
+    min-height: 44px;
+    border-radius: 6px;
+    background: white;
+    box-sizing: border-box;
+    box-shadow: 0 6px 10px #f4f4f4;
+    .flex-justify-space-between-alignitems-center-row();
+}
+
+// 单行文本水平垂直方向居中
+.text-horizontal-vertical-center(@width,@height){
+    width: @width;
+    height: @height;
+    line-height: @height;
+    text-align: center;
+}
