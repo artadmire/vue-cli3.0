@@ -1,7 +1,8 @@
+const fs = require('fs');
+// const prod_webpack_config  = require('./config/prod.js');
 module.exports = {
      // baseUrl  type:{string} default:'/' 
     // 将部署应用程序的基本URL
-    // 将部署应用程序的基本URL。
     // 默认情况下，Vue CLI假设您的应用程序将部署在域的根目录下。
     // https://www.my-app.com/。如果应用程序部署在子路径上，则需要使用此选项指定子路径。例如，如果您的应用程序部署在https://www.foobar.com/my-app/，集baseUrl到'/my-app/'.
 
@@ -47,6 +48,29 @@ module.exports = {
     // 另外，当启用 SRI 时，preload resource hints 会被禁用，因为 Chrome 的一个 bug 会导致文件被下载两次。
     // integrity:true,
 
+    // CSS 相关选项
+    css: {
+      extract : false,
+      // 是否开启 CSS source map？
+      sourceMap: false,
+
+      // 为预处理器的 loader 传递自定义选项。比如传递给
+      // sass-loader 时，使用 `{ sass: { ... } }`。less
+      // 比如你可以这样向所有 Sass 样式传入共享的全局变量
+      loaderOptions: {
+          less: {
+              data: fs.readFileSync('src/style/base.less', 'utf-8')
+          },
+      },
+
+      // 为所有的 CSS 及其预处理文件开启 CSS Modules。
+      // 这个选项不会影响 `*.vue` 文件。
+      modules: false
+  },
+
+   // 在生产环境下为 Babel 和 TypeScript 使用 `thread-loader`
+    // 在多核机器下会默认开启。
+    parallel: require('os').cpus().length > 1,
     // 调整内部的 webpack 配置。
     // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/webpack.md
     chainWebpack: () => { },

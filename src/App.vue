@@ -3,10 +3,12 @@
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive"/>
     </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive"/>>
+    <router-view v-if="!$route.meta.keepAlive"/>
   </div>
 </template>
 <style lang="less">
+@import url("~@/style/reset.less");
+@import url("~@/style/base.less");
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

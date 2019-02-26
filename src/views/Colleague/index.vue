@@ -1,28 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="~@/assets/logo.png">
-    <HelloWorld :msg="msg"/>
+  <div class="colleague">
+   {{ msg }}
+    <Footer></Footer>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Button } from "vant";
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
+import Footer from "@/components/Footer.vue";
 @Component({
   components: {
     HelloWorld,
+    "van-button": Button,
+    Footer
   },
 })
-export default class Home extends Vue {
-  // data() {
-  //   return {
-  //     msg: "Welcome to Your Vue.js + TypeScript App"
-  //   }
-  // }
+export default class Colleague extends Vue {
+  data() {
+    return {
+      msg: "Welcome to Your colleague Pages"
+    }
+  }
   private msg: string = "Welcome to Your Vue.js + TypeScript App";
   private created() {
-    // console.log("baseURL")
+    console.log("baseURL")
   }
 }
 </script>

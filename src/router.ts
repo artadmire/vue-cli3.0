@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/views/Home/index.vue';
+import Work from '@/views/Work/index.vue';
+
 
 Vue.use(Router);
 
@@ -10,16 +11,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'work',
+      component: Work,
+      meta: {
+        keepAlive: true,
+      },
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/role',
+      name: 'role',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/About/index.vue'),
+      component: () => import('@/views/Role/index.vue'),
       meta: {
         keepAlive: true,
       },
@@ -28,6 +32,38 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: () => import('@/views/Login/index.vue'),
+      meta: {
+        keepAlive: true,
+      },
+    },
+    {
+      path: '/item',
+      name: 'item',
+      component: () => import('@/views/Item/index.vue'),
+      meta: {
+        keepAlive: true,
+      },
+    },
+    {
+      path: '/colleague',
+      name: 'colleague',
+      component: () => import('@/views/Colleague/index.vue'),
+      meta: {
+        keepAlive: true,
+      },
+    },
+    {
+      path: '/calandar',
+      name: 'calandar',
+      component: () => import('@/views/Calandar/index.vue'),
+      meta: {
+        keepAlive: true,
+      },
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: () => import('@/views/Test/index.vue'),
       meta: {
         keepAlive: true,
       },
