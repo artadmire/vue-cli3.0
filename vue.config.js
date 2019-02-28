@@ -82,13 +82,12 @@ module.exports = {
     },
     devServer: {
       proxy: {
-       '/api': {
-          target: 'http://192.168.1.218:10751/',
+       '/h5': {
           changeOrigin: true,
           autoRewrite: true,
-          cookieDomainRewrite: true,
+        //   cookieDomainRewrite: true,
           pathRewrite: {
-            '^/api/': '/'
+            '^/h5': ''
           }
         }
       },
